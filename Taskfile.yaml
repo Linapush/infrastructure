@@ -1,0 +1,11 @@
+version: "3"
+
+dotenv:
+  - .env
+
+imcludes:
+  docker:
+    dir: ./deployment/docker
+    taskfile: ./deployment/docker/taskfile.yaml
+    optional: true 
+    # у меня нет такой команды, валиться не буду, пошел работать дальше

@@ -1,0 +1,4 @@
+include:
+  - ./compose.infrastructure.yaml
+  - ./compose.service.yaml
+  - ./compose.logging.yaml

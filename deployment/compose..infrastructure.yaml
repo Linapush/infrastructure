@@ -1,0 +1,33 @@
+services:
+  balancer:
+    image: nginx:1.27.2-alpine3.20 
+    port: 
+      - 80:80
+    volumes:
+      - ./config/nginx:/etc/nginx/template
+
+
+
+
+# так можно
+  # database:
+  #   image: postgres:14
+  #   ports:
+  #     - 127.0.0.1:5432:5432
+  #   environment:
+  #     - POSTGRES_USER=linpsh
+  #     - POSTGRES_PASSWORD=lpshlina@psh
+  #     - POSTGRES_DB=infrastructure
+  #     - 
+
+# так нельзя!!!, мы пробрасываем порт на обозрение всего внешнего мира
+  # database:
+  #   image: postgres:14
+  #   ports:
+  #     - 5432:5432
+  #   environment:
+  #     - POSTGRES_USER=postgres
+  #     - POSTGRES_PASSWORD=postgres
+  #     - POSTGRES_DB=postgres
+
+# значит, скорее всего про firewall мы и не думали

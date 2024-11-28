@@ -1,0 +1,25 @@
+version: '3'
+
+tasks:
+  up:
+    cmds:
+      - docker compose up -d --build {{.CLI_ARGS}}
+
+  down:
+    cmds:
+      - docker compose down {{.CLI_ARGS}} # перезапустить только один сервис
+  
+  restart:
+    cmds:
+      - task: down
+      - task: up
+
+  build:
+    cmds:
+      - docker compose build
+    desc: Сборка всех сервисов
+    
+  logs:
+    cmds:
+      - docker compose logs -f {{.CLI_ARGS}}
+    desc: Просмотр логов сервисов

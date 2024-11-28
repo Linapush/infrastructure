@@ -1,0 +1,5 @@
+services:
+  gateway_serbices:
+    restart: unless-stopped
+    build:
+      args: 
